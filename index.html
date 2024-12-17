@@ -3,23 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Einkaufsliste</title>
+    <title>Firebase Example</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Einkaufsliste</h1>
-        <div class="add-container">
-            <input type="text" id="item-input" placeholder="Neues Produkt">
-            <button id="add-button">Hinzufügen</button>
-        </div>
-    </header>
-
-    <div class="container">
-        <ul id="items-list"></ul>
-    </div>
-
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
-    <script src="app.js"></script>
+    <input type="text" id="item-input" placeholder="Item eingeben">
+    <button id="add-button">Hinzufügen</button>
+    <ul id="items-list"></ul>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
