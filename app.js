@@ -21,7 +21,7 @@ const itemsList = document.getElementById("items-list");
 addButton.addEventListener('click', () => {
     const newItem = itemInput.value.trim();
     if (newItem) {
-        db.ref('items').push(newItem);
+        push(ref(db, 'items'), newItem);
         itemInput.value = '';
     }
 });
