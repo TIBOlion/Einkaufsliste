@@ -1,3 +1,6 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyAzaZksGMriLJnbuGcoyHh4-rTdLlQ7BAM",
   authDomain: "einkaufsliste-bc7cf.firebaseapp.com",
@@ -8,8 +11,8 @@ const firebaseConfig = {
   measurementId: "G-4EM9M7DPR7"
 };
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
 const itemInput = document.getElementById("item-input");
 const addButton = document.getElementById("add-button");
@@ -23,7 +26,7 @@ addButton.addEventListener('click', () => {
     }
 });
 
-db.ref('items').on('value', (snapshot) => {
+onValue(ref(db, 'items'), (snapshot) => {
     itemsList.innerHTML = '';
     snapshot.forEach(childSnapshot => {
         const item = childSnapshot.val();
