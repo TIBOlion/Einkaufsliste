@@ -1,14 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
 import { getDatabase, ref, push, onValue } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
-const firebaseConfig = {
-  apiKey: "AIzaSyAzaZksGMriLJnbuGcoyHh4-rTdLlQ7BAM",
-  authDomain: "einkaufsliste-bc7cf.firebaseapp.com",
-  projectId: "einkaufsliste-bc7cf",
-  storageBucket: "einkaufsliste-bc7cf.firebasestorage.app",
-  messagingSenderId: "270069108055",
-  appId: "1:270069108055:web:d3ec43e28e350db72f0212",
-  measurementId: "G-4EM9M7DPR7"
-};
+import { firebaseConfig } from './app.js';
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
